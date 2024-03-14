@@ -57,10 +57,22 @@ function osszesites(FUTOK) {
 
 
 // 3. feladat
-function befutott(sor, adatok) {
+function befutott() {
+  /* <!-- Ha a feladat_1-ben lévő táblázat egyik elemére kattintunk -->
+  <!-- Az aktuális elem sora kapja meg a .befutott osztályt -->
+  <!-- feladat_3 elembe töltsük be a versenyző nevét, idejét, nemzetiségét -->
+  <!-- Oldjuk meg, hogy egy versenyző egyszer szerepelhessen a feladat_3 elemben --> */
 
-    
+  const BEFUTOTTELEMEK = document.querySelectorAll("#feladat_1 tr");
+  for (let index = 0; index < BEFUTOTTELEMEK.length; index++) {
+    BEFUTOTTELEMEK[index].addEventListener("click", function(){console.log(FUTOK[index])})
+  }
 }
+
+  const befutottELEM = document.getElementById("feladat_3");
+  befutottELEM.innerHTML = befutott();
+
+
 
 // 4. feladat
 function torolEsemeny() {
