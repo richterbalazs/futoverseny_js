@@ -63,15 +63,22 @@ function befutott() {
   <!-- feladat_3 elembe töltsük be a versenyző nevét, idejét, nemzetiségét -->
   <!-- Oldjuk meg, hogy egy versenyző egyszer szerepelhessen a feladat_3 elemben --> */
 
-  const BEFUTOTTELEMEK = document.querySelectorAll("#feladat_1 tr");
-  for (let index = 0; index < BEFUTOTTELEMEK.length; index++) {
-    BEFUTOTTELEMEK[index].addEventListener("click", function(){console.log(FUTOK[index])})
-  }
+  const befutottELEM = document.querySelectorAll("#feladat_1 tr")
+    console.log(befutottELEM)
+    for (let index = 0; index < befutottELEM.length; index++) {
+        befutottELEM[index].addEventListener("click", function(){
+            console.log(befutottELEM[index])
+            befutottELEMEK.innerHTML += `<tr>
+            <td>${FUTOK[index].nev}</td>
+            <td>${FUTOK[index].versenyIdo}</td>
+            <td>${FUTOK[index].nemzetiseg}</td>
+            </tr>`
+        })
+    }
+   
 }
-
-  const befutottELEM = document.getElementById("feladat_3");
-  befutottELEM.innerHTML = befutott();
-
+const befutottELEMEK = document.querySelectorAll("#feladat_3")[0]
+befutott()
 
 
 // 4. feladat
